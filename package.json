@@ -23,11 +23,15 @@
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
     "bluebird": "^3.0.5",
+    "co-render": "^1.1.0",
+    "co-views": "^2.1.0",
     "express": "^4.17.1",
+    "express-oauth-server": "^2.0.0",
     "express-session": "^1.17.0",
     "oauth2-server": "3.0.0",
     "passport": "^0.4.1",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "pg-promise": "^10.3.1"
   },
   "devDependencies": {
     "body-parser": "^1.19.0",

@@ -37,7 +37,7 @@ passport.deserializeUser(function(user, done) {
 
 app.post('/login', passport.authenticate('local'), (req,res) => { res.send('success')});
 app.get('/personal', showPersonal);
-app.listen(3000);
+app.listen(4000);
 
 function showPersonal(req, res) {
   let user = req.user;

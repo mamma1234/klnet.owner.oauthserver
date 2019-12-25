@@ -1,11 +1,11 @@
-
 /**
  * Module dependencies.
  */
 
 var bodyParser = require('body-parser');
 var express = require('express');
-var oauthServer = require('express-oauth-server');
+// var oauthServer = require('express-oauth-server');
+var OAuthServer = require('express-oauth-server');
 var render = require('co-views')('views');
 var util = require('util');
 
@@ -16,9 +16,20 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Add OAuth server.
-app.oauth = oauthServer({
-  model: require('./model')
+var options = { 
+  useErrorHandler: false, 
+  continueMiddleware: false,
+}
+
+// // Add OAuth server.
+// app.oauth = oauthServer({
+//   model: require('./model')
+// });
+
+app.oauth = new OAuthServer({
+  debug: true,
+  model: require('./model'),
+  options: options
 });
 
 // Post token.
